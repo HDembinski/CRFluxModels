@@ -244,10 +244,10 @@ class PrimaryFlux():
         za = self.Z_A
 
         p_flux = sum([za(corsika_id)[0] * za(corsika_id)[1] *
-            nuc_flux(corsika_id, E * za(corsika_id)[1]) 
+            nuc_flux(corsika_id, E * za(corsika_id)[1])
             for corsika_id in self.nucleus_ids])
 
-        n_flux = sum([(za(corsika_id)[1] - za(corsika_id)[0]) * 
+        n_flux = sum([(za(corsika_id)[1] - za(corsika_id)[0]) *
             za(corsika_id)[1] * nuc_flux(corsika_id, E * za(corsika_id)[1])
             for corsika_id in self.nucleus_ids])
 
@@ -482,7 +482,7 @@ class HillasGaisser2012(PrimaryFlux):
 
 class H3a_polygonato(HillasGaisser2012):
 
-    """Modified version of Gaisser, T.K., Astroparticle 
+    """Modified version of Gaisser, T.K., Astroparticle
     Physics 35, 801 (2012).
 
     Model is based on Hillas ideas and eye-ball fits by T.K. Gaisser.
@@ -512,7 +512,7 @@ class H3a_polygonato(HillasGaisser2012):
         self.params[1206][2] = (7.88, 1.4, 6)  # CNO
         self.params[2814][2] = (7.88, 1.4, 14)  # MgAlSi
         self.params[5426][2] = (7.88, 1.4, 26)  # Fe
-        
+
 
 class GaisserStanevTilav(PrimaryFlux):
 
